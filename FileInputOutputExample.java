@@ -17,14 +17,18 @@ public class FileInputOutputExample {
 		   String line = null;
 		   int count;
 		   Scanner input = new Scanner(System.in);
-			for (count = 1; count <= 3; count++)
-			{
-			
-			line = input.nextLine();
-				outputStream.println(count + " " + line);
-			}
-			outputStream.close();
-			System.out.println("... written to student.txt.");
+		   try {
+				for (count = 1; count <= 3; count++)
+				{
+				
+				line = input.nextLine();
+					outputStream.println(count + " " + line);
+				}
+				outputStream.close();
+				   System.out.println("... written to student.txt.");
+		   } finally {
+			   input.close();
+		   }
 		   }
 	public static void readFile() {
 		String line = null;
