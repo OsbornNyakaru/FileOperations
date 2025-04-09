@@ -5,14 +5,14 @@ public class FileInputOutputExample {
 	public static void printToFile() {
 		PrintWriter outputStream = null;
 		   try
-		   {
+		   	{
 		       outputStream =  new PrintWriter(new FileOutputStream("student.txt"));
-		   }
+		   	}
 		   catch(FileNotFoundException e)
-		   {
+		   	{
 		       System.out.println("Error opening the file student.txt."  + e.getMessage());
 		       System.exit(0);
-		   }
+		   	}
 		   System.out.println("Enter three lines of text:");
 		   String line = null;
 		   int count;
@@ -21,14 +21,14 @@ public class FileInputOutputExample {
 				for (count = 1; count <= 3; count++)
 				{
 				
-				line = input.nextLine();
+					line = input.nextLine();
 					outputStream.println(count + " " + line);
 				}
 				outputStream.close();
-				   System.out.println("... written to student.txt.");
-		   } finally {
+				System.out.println("... written to student.txt.");
+		   	} finally {
 			   input.close();
-		   }
+		   	}
 		   }
 	public static void readFile() {
 		String line = null;
